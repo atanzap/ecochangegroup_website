@@ -25,16 +25,45 @@
 
 		<!-- Ecosystems and Global Change Group -->
 			<section id="intro" class="main style1 dark fullscreen">
-				
-<div class="video-container">
-  <iframe scrolling="no" src="https://www.youtube.com/embed/-t4frZ4EPvQ?autoplay=1&mute=1&playlist=-t4frZ4EPvQ&loop=1" allow='autoplay'></iframe>
+		
+<div class="bg_utube">		
+<div id="player"></div>
+
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      width: '100%',
+      videoId: '-t4frZ4EPvQ',
+      playerVars: { 'autoplay': 1, 'playsinline': 1, 'loop': 1, 'playlist': '-t4frZ4EPvQ'},
+      events: {
+        'onReady': onPlayerReady,
+      }
+    });
+  }
+  
+// 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+     event.target.mute();
+    event.target.playVideo();
+  }
+</script>
 </div>
 
 				<div id="vidtext">
 					<header>
-						<h2>Ecology • Evolution • Conservation</h2>
+						<h2 style="font-size:4vw">Ecology • Evolution • Conservation</h2>
 					</header>
-					<p style="font-size:190%;"> 
+					<p style="font-size:2vw"> 
 					<br /> <br /> <br /> 
 					Our mission is to inform policy and management of ways to mitigate the negative impacts of global environmental change on the benefits that ecosystems deliver to people.
 					</p>

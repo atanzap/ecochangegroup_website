@@ -128,6 +128,17 @@ div.desc {
 
 
 /* Video controls */
+div.bg_utube {
+        position: fixed;
+        -webkit-user-select: none;
+        user-select: none;
+        width: 100%;
+        height: 100%;
+        -ms-transform: scale(2,3.56);
+      -webkit-transform: scale(2,3.56);
+      transform: scale(2,3.56);
+    }
+	
 #vidtext{
   position: absolute;
   color: #FFFFFF;
@@ -2126,7 +2137,7 @@ iframe::-webkit-scrollbar {
 		@media screen and (max-width: 736px) {
 
 			.main > .content br {
-				display: none;
+				display: block !important;
 			}
 
 			.main.fullscreen {
